@@ -5,10 +5,10 @@ body {margin:0;}
 	a.one:hover {display: block;color:#7F0002;font-weight: 600;text-decoration: none;}
 	a.one:active {display: block;color:#7F0002;font-weight: 600;text-decoration: none;}
 
-    a.two:link {display: inline;color:#7F0002;font-weight: 600;text-decoration: none;}
-	a.two:visited {display: inline;color:#7F0002;font-weight: 600;text-decoration: none;}
-	a.two:hover {display: inline;color:#7F0002;font-weight: 600;text-decoration: none;}
-	a.two:active {display: inline;color:#7F0002;font-weight: 600;text-decoration: none;}
+    a.two:link {display: inline;color:#000000;font-weight: 600;text-decoration: none;}
+	a.two:visited {display: inline;color:#000000;font-weight: 600;text-decoration: none;}
+	a.two:hover {display: inline;color:#000000;font-weight: 600;text-decoration: none;}
+	a.two:active {display: inline;color:#000000;font-weight: 600;text-decoration: none;}
 
 a:link {
     text-decoration: none;
