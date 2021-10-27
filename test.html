@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <input type="file" id="input">
+  <script>
+  (function(){
+    var input = document.querySelector('#input');
+ 
+    input.addEventListener('change', function(e){
+      handFile(e.target.files[0]);
+    });
+ 
+    function handFile(file){
+ 
+      var reader = new FileReader();
+ 
+      reader.onload = function(e){
+        console.log(e.target.result.split("\n"));
+      };
+ 
+      reader.readAsText(file);
+    }
+  })();
+  </script>
+</body>
+</html>
