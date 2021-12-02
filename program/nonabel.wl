@@ -22,10 +22,10 @@ NToNA[X_]:=Module[{},tempp=StringReplace[ToString[X//FullForm,OutputForm],{"Time
 tempp=StringReplace[ToString[tempp//FullForm,OutputForm],{"NonCommutativePower"->"Power"}]//ToExpression;(*\:5c06\:4e0d\:80fd\:5904\:7406\:7684\:6307\:6570\:8fd0\:7b97\:8fd8\:539f\:ff0c\:6bd4\:5982\:975e\:6b63\:6574\:6570\:ff0c\:8fd9\:4e9b\:4e00\:822c\:90fd\:662f\:5bf9\:6613\:5e38\:6570\:7684\:6307\:6570\:ff0c\:5f53\:7136\:53ef\:80fd\:5305\:542b\:9006\:5143\:ff0c\:6240\:4ee5\:8fd9\:4e2a\:7a0b\:5e8f\:8fd8\:4e0d\:80fd\:8ba1\:7b97\:9006\:5143\:7684\:975e\:5bf9\:6613\:4e58\:6cd5*)
 tempp=StringReplace[ToString[tempp//FullForm,OutputForm],{"NonCommutativeMultiply"->"KeepTimeToNonCommutativeMultiply@ExpandNCM@NonCommutativeMultiply"}]//ToExpression;(*\:5bf9\:6240\:6709\:7684\:975e\:5bf9\:6613\:4e58\:6cd5\:8fdb\:884c\:4e00\:6b21\:8ba1\:7b97\:7ed3\:679c\:8f93\:51fa\:4e3a\:975e\:5bf9\:6613\:4e58\:6cd5\:5f62\:5f0f\:ff0c\:5b8c\:6210\:8fd9\:4e2a\:8fd0\:7b97\:540e\:7ed3\:679c\:4e3a\:5355\:9879\:5f0f\:975e\:5bf9\:6613\:4e58\:6cd5\:7684\:548c*)
 tempp=StringReplace[ToString[tempp//FullForm,OutputForm],{"NonCommutativeMultiply"->"ExpandNCM@NonCommutativeMultiply"}]//ToExpression(*\:5c06\:975e\:5bf9\:6613\:4e58\:6cd5\:4e2d\:7684\:5bf9\:6613\:9879\:63d0\:51fa\:ff0c\:5373\:5b8c\:6210\:5355\:9879\:5f0f\:7684\:975e\:5bf9\:6613\:4e58\:6cd5\:5904\:7406*)
-]
+];
 
-PIpositive=#\[Element]Integers&&#>1&(*\:5224\:65ad\:662f\:5426\:4e3a\:5927\:4e8e\:4e00\:7684\:6574\:6570*)
-PI1=#==1&(*\:5224\:65ad\:662f\:5426\:4e3a1*)
+PIpositive=#\[Element]Integers&&#>1&;(*\:5224\:65ad\:662f\:5426\:4e3a\:5927\:4e8e\:4e00\:7684\:6574\:6570*)
+PI1=#==1&;(*\:5224\:65ad\:662f\:5426\:4e3a1*)
 NonCommutativePower[X_,n_?PIpositive]:=NonCommutativeMultiply[X,NonCommutativePower[X,n-1]];(*\:5b9a\:4e49\:975e\:5bf9\:6613\:6307\:6570\:8fd0\:7b97\:4e3a\:ff1an\:6b21\:65b9\:4e3an\:6b21\:975e\:5bf9\:6613\:4e58\:6cd5\:ff0cn\:53ea\:80fd\:53d6\:6b63\:6574\:6570\:ff0c\:5bf9\:4e8e\:9006\:5143\:8fd8\:672a\:5305\:62ec*)
 NonCommutativePower[X_,n_?PI1]:=Expand[X];(*\:4e00\:6b21\:65b9\:4e3a\:81ea\:8eab*)
 
